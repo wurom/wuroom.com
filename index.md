@@ -25,4 +25,8 @@ Syntax highlighted code block
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-![Image of Yaktocat](http://www.wuroom.com/lovetime.swf)
+
+<object type="application/x-shockwave-flash data="c.swf?path=lovetime.swf" width="400" height="300">
+<param name="movie" value="c.swf?path=lovetime.swf" />
+<img src="noflash.gif" width="200" height="100" alt="" />
+</object>
