@@ -1,28 +1,12 @@
-## Welcome to wuroom.com
+背单词 pc
+
+轻松背单词、上班工作背单词、不知不觉背单词。
 
 
+软件说明：
+为了边工作边背单词,因为找不到简单
+适用的软件,所以便有了这个软件,
+在使用过程中有任何建议欢迎提出。
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
+下载：
+https://github.com/wurom/wuroom.com/releases/download/1.0/WuWord.rar
