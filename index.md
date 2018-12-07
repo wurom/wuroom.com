@@ -1,7 +1,8 @@
-背单词 pc
+## 背单词 pc
 
 轻松背单词、上班工作背单词、不知不觉背单词。
-![Image](https://github.com/wurom/wuroom.com/blob/master/123.png)
+
+![Image](123.png)
 
 软件说明：
 为了边工作边背单词,因为找不到简单
