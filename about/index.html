@@ -27,25 +27,9 @@
         </ul>
       </header>
       <section>
-
-      <p>重装TCP/IP协议</p>
-
-<p>1.”开始-&gt;运行-&gt;输入regedit-&gt;确定-&gt;打开注册表;</p>
-
-<p>2.删除以下两个键:</p>
-
-<p>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Winsock</p>
-
-<p>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Winsock2</p>
-
-<p>3.用记事本打开%winroot%\inf\nettcpip.inf文件(C:\WINDOWS\inf\nettcpip.inf)，找到Characteristics = 0xA0 ;改为Characteristics = 0x80 ;保存退出(此步的作用是为了使TCP/IP协议的卸载按钮生效);</p>
-
-<p>4.网上邻居-&gt;右击属性-&gt;打开网络连接-&gt;本地连接-&gt;右击属性-&gt;安装-&gt;协议-&gt;安装-&gt;从磁盘安装-&gt;浏览刚保存的nettcpip.inf(%winroot%\inf\nettcpip.inf)文件-&gt;选择”TCP/IP协议”(不要选那个TCP/IP版本6);</p>
-
-<p>5.返回网络连接属性-&gt;选择”Internet 协议(TCP/IP)”-&gt;点”卸载”按钮把TCP/IP协议删除，然后关闭重启电脑;</p>
-
-<p>6.重启后再按第4步，重新安装一次TCP/IP协议便可。</p>
-
+##About Me
+Hi there, I am eYeMan.
+I am interested in Operating System, Algorithms, C++, Web Technology, Sports, Finance and Deep Learning, talking about these things is welcome.
 
 
       </section>
