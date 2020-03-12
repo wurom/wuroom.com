@@ -295,7 +295,7 @@ footer {
 .entry-content a:hover{border-bottom:1px dashed #424242;color:#424242;text-decoration:none}
 
 
-.post-title{color:#424242}.post-title:hover{color:#424242}
+.post-title{color:#424242}.post-title:hover{color:#424242}.post-title-r{color:#424242;float:right}
 .post-meta{font-size:14px;color:#000;padding:7px 0px;margin-bottom:20px;margin-top:10px;border-top:1px dashed #c2c2c2;border-bottom:1px dashed #c2c2c2}
 
 img.thumb {
