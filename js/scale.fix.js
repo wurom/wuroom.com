@@ -15,3 +15,22 @@ function gestureStart() {
     }
   }
 }
+function ShowtoHide(myid,mysrc) {
+if(document.getElementById(myid).innerHTML=="") {
+//alert('<img src="'+mysrc+'"/>');
+document.getElementById(myid).innerHTML='<img src="'+mysrc+'"/>';}
+else
+{
+document.getElementById(myid).innerHTML="";
+}}
+
+/*
+function ShowtoHide(comfirmPic1Local,lookPic) {
+if(document.getElementById(lookPic).innerHTML=='<i class="fa fa-eye" aria-hidden="true"></i>') {
+document.getElementById(comfirmPic1Local).style.display = "block";
+document.getElementById(lookPic).innerHTML='<i class="fa fa-eye-slash" aria-hidden="true"></i>'; } else
+if(document.getElementById(lookPic).innerHTML=='<i class="fa fa-eye-slash" aria-hidden="true"></i>') {
+document.getElementById(comfirmPic1Local).style.display = "none";
+document.getElementById(lookPic).innerHTML='<i class="fa fa-eye" aria-hidden="true"></i>';
+}}
+*/
