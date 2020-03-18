@@ -12,7 +12,58 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-	  <script src="https://www.wuroom.com/js/swf.js"></script>  
+
+<style>	
+.year,.month,.days, .hours, .minutes, .seconds {
+  display: inline-block;
+  padding: 5px;
+  width: 20px;
+  height: auto;
+  border-radius: 5px;
+  text-align: center;
+  color:Black;
+}
+.year {background: #F2F200;}
+.month {background: #00AE57;}
+.days {background: #FF8000;}
+.hours {background: #0080FF;}
+.minutes {background: #80FF00;}
+.seconds {background: #FF0080;}
+
+.name {
+  position: relative;
+  margin: 5px;
+  overflow: hidden;
+  width: 225px;
+}
+.container {
+  position: relative;
+  margin: 5px;
+  overflow: hidden;
+  width: 225px;
+  height: 120px;
+}
+.circle{
+  width: 225px;
+  height: 225px;
+  position: relative;
+}
+canvas{
+  display: block;
+  margin: 0;
+  position: absolute;
+  background: white;
+  left: 0;
+  top: 0;
+}
+#canvas_1{z-index: 1; background: transparent;}
+#canvas_2{z-index: 2; background: transparent;}
+#canvas_3{z-index: 3; background: transparent;}
+#canvas_4{z-index: 4; background: transparent;}
+#canvas_5{z-index: 5; background: transparent;}
+#canvas_6{z-index: 6; background: transparent;}
+</style> 
+  
   </head>
   <body>
     <div class="wrapper">
@@ -38,7 +89,35 @@
 	    </section>
       <footer>
       	<ul class="fa-ul">
-	      <li><p><div id="flashcontent">Flash is not supported</div></p></li>
+	      <li>
+<div class="circle">
+  <canvas id="canvas_1" width="224" height="224"></canvas>
+  <canvas id="canvas_2" width="224" height="224"></canvas>
+  <canvas id="canvas_3" width="224" height="224"></canvas>
+  <canvas id="canvas_4" width="224" height="224"></canvas>
+  <canvas id="canvas_5" width="224" height="224"></canvas>
+  <canvas id="canvas_6" width="224" height="224"></canvas>
+</div>
+		<div class="name">
+			<div class="year">年</div>
+			<div class="month">月</div>
+			<div class="days">天</div>
+			<div class="hours">时</div>
+			<div class="minutes">分</div>
+			<div class="seconds">秒</div>			
+		</div>
+		
+		<div class="container">
+			<div class="year" id="div1">年</div>
+			<div class="month" id="div2">月</div>
+			<div class="days" id="div3">天</div>
+			<div class="hours" id="div4">时</div>
+			<div class="minutes" id="div5">分</div>
+			<div class="seconds" id="div6">秒</div>			
+		</div>
+
+</li>
+	      
         <li><i class="fa fa-copyright"></i> 2020 Joe</li>
         <li><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_3679761'%3E%3C/span%3E%3Cscript src='https://s23.cnzz.com/stat.php%3Fid%3D3679761%26online%3D2' type='text/javascript'%3E%3C/script%3E"));</script></li>
       </ul>
@@ -47,5 +126,6 @@
     <script type="text/javascript">var el = document.getElementById("flashcontent");swfobject.embedSWF("/images/lovetime.swf", el, 210, 190, 10);</script>
     <script src="../js/scale.fix.js"></script>
     <script src="../js/word.js"></script>
+    <script src="../js/wutime.js"></script>
   </body>
 </html>
