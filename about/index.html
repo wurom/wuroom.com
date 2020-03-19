@@ -14,21 +14,23 @@
     <![endif]-->
 
 <style>	
-.year,.month,.days, .hours, .minutes, .seconds {
+.bhui,.year,.month,.days, .hours, .minutes, .seconds {
   display: inline-block;
   padding: 5px;
   width: 20px;
   height: auto;
-  border-radius: 5px;
+  border-radius: 0px;
   text-align: center;
   color:Black;
 }
-.year {background: #F2F200;}
+.year {background: #00EEEE;}
 .month {background: #00AE57;}
 .days {background: #FF8000;}
 .hours {background: #0080FF;}
 .minutes {background: #80FF00;}
 .seconds {background: #FF0080;}
+
+.bhui {background: #D7D7D7;}
 
 .name {
   position: relative;
@@ -45,6 +47,16 @@
   height: 120px;
 
 }
+
+.timeshow span {
+  display: inline-block;
+  padding: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
 .circle{
   width: auto;
   height: 225px;
@@ -87,23 +99,15 @@ canvas{
   <canvas id="canvas_5" width="224" height="224"></canvas>
   <canvas id="canvas_6" width="224" height="224"></canvas>
 </div>
-		<div class="name">
-			<div class="year">年</div>
-			<div class="month">月</div>
-			<div class="days">天</div>
-			<div class="hours">时</div>
-			<div class="minutes">分</div>
-			<div class="seconds">秒</div>			
-		</div>
-		
-		<div class="container">
-			<div class="year" id="div1">年</div>
-			<div class="month" id="div2">月</div>
-			<div class="days" id="div3">天</div>
-			<div class="hours" id="div4">时</div>
-			<div class="minutes" id="div5">分</div>
-			<div class="seconds" id="div6">秒</div>			
-		</div></p>        
+
+  <div class="timeshow" id="iyear"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="timeshow" id="imonth"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="timeshow" id="idays"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="timeshow" id="ihours"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="timeshow" id="iminutes"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="timeshow" id="iseconds"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+</p>        
         
       </header>
       <section>
