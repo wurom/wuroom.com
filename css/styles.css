@@ -1,6 +1,6 @@
 body {
   background-color: #fff;
-  padding:50px;
+  padding:20px;
   font-family:"Microsoft YaHei",Menlo,"Meslo LG",monospace;
   color:#595959;
   font-weight:400;
@@ -190,7 +190,7 @@ footer {
   width:270px;
   float:left;
   position:fixed;
-  bottom:50px;
+  bottom:0px;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
@@ -273,13 +273,13 @@ footer {
     display: inline-block;
     float: left;
     margin-right: 20px;
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 64px;
     background-repeat: no-repeat;
-    background-size: 50px 50px;
+    background-size: 64px 64px;
     border-radius: 5px;
     -webkit-filter: grayscale(100%);
-    filter: grayscale(100%)
+    filter: grayscale(100%);
 }
 
 #header:hover #logo {
