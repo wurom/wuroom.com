@@ -63,8 +63,8 @@ color:#FF8000;
 </div>
 
  <div class="entry clearfix">
-			<div><textarea id="url"   rows="3"  style="width:100%"/></textarea><button type="button" onclick="GoUrl()">Go</button></div>
-			<div><textarea id="codet" rows="3" style="width:100%"></textarea></div>
+			<div><textarea id="url" rows="3" style="width:100%" onchange="GetCode()" /></textarea></div>
+
 </div>
  <div class="entry clearfix">
 			<form  id="see" class="vip" onchange="SeeMe()" method="get"></form>
@@ -84,17 +84,21 @@ color:#FF8000;
     </div>
     <script src="../js/scale.fix.js"></script>
     <script src="../js/word.js"></script>
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
   </body>
 </html>
 
-			<script>
+<script>
+
+var tvobj  = document.getElementById("tvv");
+				
 				function GetSel(){
 					var SLIST = new Array("https://v.qq.com/x/search/","http://so.iqiyi.com/","https://www.soku.com/","https://so.mgtv.com/so");
 					var iframe = document.getElementById('tvf');
 					for(var i =0 ;i<iframe.length;i++){
 						if(iframe[i].checked){
 							//alert(iframe[i].value);
-							document.getElementById("tvv").innerHTML = '<iframe name="tvif" height=200 width=100%  src="'+SLIST[i]+'"> </iframe>' ;
+							tvobj.innerHTML = '<iframe name="tvif" height=200 width=100%  src="'+SLIST[i]+'"> </iframe>' ;
 							break;
 						}
 					}
@@ -102,14 +106,14 @@ color:#FF8000;
 				//<div><iframe id="ts" name="ts" height=200 width=100% src="https://v.qq.com/x/search/"></iframe></div>
 				function GoUrl() {
 					var url = document.getElementById("url").value;
-					document.getElementById("tvv").innerHTML = '<iframe name="tvif" height=200 width=100%  src="'+url+'"> </iframe>' ;
+					tvobj.innerHTML = '<iframe name="tvif" height=200 width=100%  src="'+url+'"> </iframe>' ;
 				}
 
-				var ul = new Array("https://v.88tv.org/?v=","https://cdn.yangju.vip/k/?url=","https://jx.lache.me/cc/?url=","https://api.653520.top/vip/?url=","https://jx.ab33.top/vip/?url=",
+				var ul = new Array("https://api.sigujx.com/jx/?url=","https://v.88tv.org/?v=","https://cdn.yangju.vip/k/?url=","https://jx.lache.me/cc/?url=","https://api.653520.top/vip/?url=","https://jx.ab33.top/vip/?url=",
 				"https://vip.mpos.ren/v/?url=","https://jx.000180.top/jx/?url=","https://jx.km58.top/jx/?url=","http://jx.du2.cc/?url=","http://jx.drgxj.com/?url=","http://jx.618ge.com/?url=",
-				"http://vip.jlsprh.com/?url=","http://jx.drgxj.com/?url=","http://jx.598110.com/?url=");
+				"http://vip.jlsprh.com/?url=","http://jx.drgxj.com/?url=","http://jx.598110.com/?url=","https://www.administratorw.com/video.php?url=");
 
-				var web = new Array("88tv.org","hyangju.vip","lache.me","653520.top","ab33.top","mpos.ren","000180.top","km58.top","du2.cc","drgxj.com","618ge.com","jlsprh.com","drgxj.com","598110.com");
+				var web = new Array("sigujx.com","88tv.org","hyangju.vip","lache.me","653520.top","ab33.top","mpos.ren","000180.top","km58.top","du2.cc","drgxj.com","618ge.com","jlsprh.com","drgxj.com","598110.com","wm");
 
 				var see = document.getElementById("see");
 				var z =0 ;
@@ -117,12 +121,41 @@ color:#FF8000;
 					see.innerHTML += '<label><input name="seer" type="radio"/>'+web[z-1]+'</label>';
 				}
 
+    $.ajaxPrefilter(function (options) {
+        if (options.crossDomain && jQuery.support.cors) {
+            var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+            options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+            //options.url = "http://cors.corsproxy.io/url=" + options.url;
+        }
+    });
+    
+var code = null;
+function GetCode(){
+var url  = document.getElementById("url").value;
+  if(url){
+   tvobj.innerHTML = "Load...";
+   code = null;
+   $.get(url,function (response) {   	
+            //$("#html").html(response);
+            var mydata = response.match(new RegExp('LIST_INFO'+'(.*?)'+'data'))[1];
+            mydata = mydata.substring(mydata.indexOf("[") + 1, mydata.indexOf("]"));
+                        
+            tvobj.innerHTML = '<textarea rows="10" style="width:100%"/>'+mydata+'</textarea>';//.match(new RegExp('["'+'(.*?)'+'"]'))[1];
+            
+            code = new Array(mydata.replace(/\"/g, "").split(','));
+         	
+        });
+ }
+}
+
+
+
 				function SeeMe() {
 					var selurl = null;
 					var url  = document.getElementById("url").value;
 					//var code = new Array(document.getElementById("codet").value);
-					var str = document.getElementById("codet").value;
-					var code = new Array(str.replace(/\"/g, "").split(','));
+					//var str = document.getElementById("codet").value;
+					//var code = new Array(str.replace(/\"/g, "").split(','));
 					var tv1 = document.getElementById("tv1");
 
 					var zz=0;
@@ -134,7 +167,7 @@ color:#FF8000;
 						}
 					}
 
-					if(str){
+					if(code){
 						tv1.innerHTML = "";
 						var index = url.lastIndexOf("/");
 						var codehead = url.substring(0, index+1);
