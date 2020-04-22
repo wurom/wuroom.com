@@ -2,434 +2,265 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>乌鲁木-404</title>
-  <style>  
+    <title>伍维空间-404</title>
+ <style>
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,900);
+html,body {
+    margin: 0;
+    overflow: hidden;
+    background: #0a0a0a;
+}
+canvas {
+    -webkit-animation: rotate 30s linear infinite;
+    animation: rotate 30s linear infinite;
+}
+.content {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 50vw;
+    height: 50vh;
+    text-align: center;
+}
+h1,
+h2 {
+    margin: 0;
+    color: #fff;
+    text-shadow: 0 0 100px #00f, 0 3px 0 rgba(50, 0, 100, 0.8);
+    -webkit-filter: url(#drop-shadow);
+    filter: url(#drop-shadow);
+    font-family: Roboto;
+    font-weight: 300;
+}
+h1 {
+    font-size: 30vh;
+}
+h2 {
+    font-size: 7vh;
+}
+.black-hole {
+    font-weight: 900;
+    text-shadow: 0 0 50px #8e57ff;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    -webkit-animation: pulse 1s ease infinite, pulse2 1s ease infinite;
+    animation: pulse 1s ease infinite, pulse2 1s ease infinite;
+}
+.black-hole:after {
+    content: "0";
+    position: absolute;
+    top: 6%;
+    left: 5%;
+    color: #f9f;
+    font-size: 90%;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+.black-hole:before {
+    content: "0";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #f0f;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(0.95) rotateZ(-3deg) translateZ(0);
+        transform: scale(0.95) rotateZ(-3deg) translateZ(0);
+    }
+    50% {
+        -webkit-transform: scale(1.05) rotateZ(3deg) translateZ(0);
+        transform: scale(1.05) rotateZ(3deg) translateZ(0);
+    }
+    100% {
+        -webkit-transform: scale(0.95) rotateZ(-3deg) translateZ(0);
+        transform: scale(0.95) rotateZ(-3deg) translateZ(0);
+    }
+}
+@keyframes pulse {
+    0% {
+        -webkit-transform: scale(0.95) rotateZ(-3deg) translateZ(0);
+        transform: scale(0.95) rotateZ(-3deg) translateZ(0);
+    }
+    50% {
+        -webkit-transform: scale(1.05) rotateZ(3deg) translateZ(0);
+        transform: scale(1.05) rotateZ(3deg) translateZ(0);
+    }
+    100% {
+        -webkit-transform: scale(0.95) rotateZ(-3deg) translateZ(0);
+        transform: scale(0.95) rotateZ(-3deg) translateZ(0);
+    }
+}
+@-webkit-keyframes pulse2 {
+    0% {
+        text-shadow: 0 0 50px #8e57ff;
+        -webkit-filter: hue-rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        text-shadow: 0 0 60px #8000ff;
+        -webkit-filter: hue-rotate(30deg);
+        filter: hue-rotate(30deg);
+    }
+    100% {
+        text-shadow: 0 0 50px #8e57ff;
+        -webkit-filter: hue-rotate(-30deg);
+        filter: hue-rotate(-30deg);
+    }
+}
+@keyframes pulse2 {
+    0% {
+        text-shadow: 0 0 50px #8e57ff;
+        -webkit-filter: hue-rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        text-shadow: 0 0 60px #8000ff;
+        -webkit-filter: hue-rotate(30deg);
+        filter: hue-rotate(30deg);
+    }
+    100% {
+        text-shadow: 0 0 50px #8e57ff;
+        -webkit-filter: hue-rotate(-30deg);
+        filter: hue-rotate(-30deg);
+    }
+}
+@-webkit-keyframes rotate {
+    to {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+    }
+}
+@keyframes rotate {
+    to {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+    }
+}
+
 a {
-  color:#000;
   text-decoration:none;
 }
-
-a:hover {
-  color:#fff;
-}
-
-.message {
-        position: absolute;
-        top: 20%;
-        right: 5%;
-        color: #fafafa;
-        font-size: 30px;
-        animation: textRotate 0.8s linear 0.5s infinite alternate;
-      }
- 
-      body {
-        padding: 0px;
-        margin: 0px;
-        border: 0px;
-        width: 100%;
-        height: 100%;
-      }
- 
-      @keyframes textRotate {
-        from {
-          transform-origin: top;
-          transform: rotateX(-30deg);
-        }
-        to {
-          transform-origin: top;
-          transform: rotateX(12deg);
-        }
-      }
- 
-      .NotPage {
-        position: relative;
-        z-index: -10;
-        background: #000;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        font-family: "Anton", sans-serif;
-        justify-content: center;
-        align-items: center;
-        -webkit-perspective: 1000px;
-        perspective: 1000px;
-      }
- 
-      div {
-        -webkit-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-      }
- 
-      .rail {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        -webkit-transform: rotateX(-30deg) rotateY(-30deg);
-        transform: rotateX(-30deg) rotateY(-30deg);
-      }
- 
-      .rail .stamp {
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #141414;
-        color: #fff;
-        font-size: 7rem;
-      }
- 
-      .rail .stamp:nth-child(1) {
-        -webkit-animation: stampSlide 40000ms -2300ms linear infinite;
-        animation: stampSlide 40000ms -2300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(2) {
-        -webkit-animation: stampSlide 40000ms -4300ms linear infinite;
-        animation: stampSlide 40000ms -4300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(3) {
-        -webkit-animation: stampSlide 40000ms -6300ms linear infinite;
-        animation: stampSlide 40000ms -6300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(4) {
-        -webkit-animation: stampSlide 40000ms -8300ms linear infinite;
-        animation: stampSlide 40000ms -8300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(5) {
-        -webkit-animation: stampSlide 40000ms -10300ms linear infinite;
-        animation: stampSlide 40000ms -10300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(6) {
-        -webkit-animation: stampSlide 40000ms -12300ms linear infinite;
-        animation: stampSlide 40000ms -12300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(7) {
-        -webkit-animation: stampSlide 40000ms -14300ms linear infinite;
-        animation: stampSlide 40000ms -14300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(8) {
-        -webkit-animation: stampSlide 40000ms -16300ms linear infinite;
-        animation: stampSlide 40000ms -16300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(9) {
-        -webkit-animation: stampSlide 40000ms -18300ms linear infinite;
-        animation: stampSlide 40000ms -18300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(10) {
-        -webkit-animation: stampSlide 40000ms -20300ms linear infinite;
-        animation: stampSlide 40000ms -20300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(11) {
-        -webkit-animation: stampSlide 40000ms -22300ms linear infinite;
-        animation: stampSlide 40000ms -22300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(12) {
-        -webkit-animation: stampSlide 40000ms -24300ms linear infinite;
-        animation: stampSlide 40000ms -24300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(13) {
-        -webkit-animation: stampSlide 40000ms -26300ms linear infinite;
-        animation: stampSlide 40000ms -26300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(14) {
-        -webkit-animation: stampSlide 40000ms -28300ms linear infinite;
-        animation: stampSlide 40000ms -28300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(15) {
-        -webkit-animation: stampSlide 40000ms -30300ms linear infinite;
-        animation: stampSlide 40000ms -30300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(16) {
-        -webkit-animation: stampSlide 40000ms -32300ms linear infinite;
-        animation: stampSlide 40000ms -32300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(17) {
-        -webkit-animation: stampSlide 40000ms -34300ms linear infinite;
-        animation: stampSlide 40000ms -34300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(18) {
-        -webkit-animation: stampSlide 40000ms -36300ms linear infinite;
-        animation: stampSlide 40000ms -36300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(19) {
-        -webkit-animation: stampSlide 40000ms -38300ms linear infinite;
-        animation: stampSlide 40000ms -38300ms linear infinite;
-      }
- 
-      .rail .stamp:nth-child(20) {
-        -webkit-animation: stampSlide 40000ms -40300ms linear infinite;
-        animation: stampSlide 40000ms -40300ms linear infinite;
-      }
- 
-      @-webkit-keyframes stampSlide {
-        0% {
-          -webkit-transform: rotateX(90deg) rotateZ(-90deg) translateZ(-200px) translateY(130px);
-          transform: rotateX(90deg) rotateZ(-90deg) translateZ(-200px) translateY(130px);
-        }
-        100% {
-          -webkit-transform: rotateX(90deg) rotateZ(-90deg) translateZ(-200px) translateY(-3870px);
-          transform: rotateX(90deg) rotateZ(-90deg) translateZ(-200px) translateY(-3870px);
-        }
-      }
- 
-      @keyframes stampSlide {
-        0% {
-          -webkit-transform: rotateX(90deg) rotateZ(-90deg) translateZ(-200px) translateY(130px);
-          transform: rotateX(90deg) rotateZ(-90deg) translateZ(-200px) translateY(130px);
-        }
-        100% {
-          -webkit-transform: rotateX(90deg) rotateZ(-90deg) translateZ(-200px) translateY(-3870px);
-          transform: rotateX(90deg) rotateZ(-90deg) translateZ(-200px) translateY(-3870px);
-        }
-      }
- 
-      .world {
-        -webkit-transform: rotateX(-30deg) rotateY(-30deg);
-        transform: rotateX(-30deg) rotateY(-30deg);
-      }
- 
-      .world .forward {
-        position: absolute;
-        -webkit-animation: slide 2000ms linear infinite;
-        animation: slide 2000ms linear infinite;
-      }
- 
-      .world .box {
-        width: 200px;
-        height: 200px;
-        -webkit-transform-origin: 100% 100%;
-        transform-origin: 100% 100%;
-        -webkit-animation: roll 2000ms cubic-bezier(1, 0.01, 1, 1) infinite;
-        animation: roll 2000ms cubic-bezier(1, 0.01, 1, 1) infinite;
-      }
- 
-      .world .box .wall {
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background: rgba(10, 10, 10, 0.8);
-        border: 1px solid #fafafa;
-        box-sizing: border-box;
-      }
- 
-      .world .box .wall::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        font-size: 7rem;
-      }
- 
-      .world .box .wall:nth-child(1) {
-        -webkit-transform: translateZ(100px);
-        transform: translateZ(100px);
-      }
- 
-      .world .box .wall:nth-child(2) {
-        -webkit-transform: rotateX(180deg) translateZ(100px);
-        transform: rotateX(180deg) translateZ(100px);
-      }
- 
-      .world .box .wall:nth-child(3) {
-        -webkit-transform: rotateX(90deg) translateZ(100px);
-        transform: rotateX(90deg) translateZ(100px);
-      }
- 
-      .world .box .wall:nth-child(3)::before {
-        -webkit-transform: rotateX(180deg) rotateZ(90deg) translateZ(-1px);
-        transform: rotateX(180deg) rotateZ(90deg) translateZ(-1px);
-        -webkit-animation: zeroFour 4000ms -2000ms linear infinite;
-        animation: zeroFour 4000ms -2000ms linear infinite;
-      }
- 
-      .world .box .wall:nth-child(4) {
-        -webkit-transform: rotateX(-90deg) translateZ(100px);
-        transform: rotateX(-90deg) translateZ(100px);
-      }
- 
-      .world .box .wall:nth-child(4)::before {
-        -webkit-transform: rotateX(180deg) rotateZ(-90deg) translateZ(-1px);
-        transform: rotateX(180deg) rotateZ(-90deg) translateZ(-1px);
-        -webkit-animation: zeroFour 4000ms -2000ms linear infinite;
-        animation: zeroFour 4000ms -2000ms linear infinite;
-      }
- 
-      .world .box .wall:nth-child(5) {
-        -webkit-transform: rotateY(90deg) translateZ(100px);
-        transform: rotateY(90deg) translateZ(100px);
-      }
- 
-      .world .box .wall:nth-child(5)::before {
-        -webkit-transform: rotateX(180deg) translateZ(-1px);
-        transform: rotateX(180deg) translateZ(-1px);
-        -webkit-animation: zeroFour 4000ms linear infinite;
-        animation: zeroFour 4000ms linear infinite;
-      }
- 
-      .world .box .wall:nth-child(6) {
-        -webkit-transform: rotateY(-90deg) translateZ(100px);
-        transform: rotateY(-90deg) translateZ(100px);
-      }
- 
-      .world .box .wall:nth-child(6)::before {
-        -webkit-transform: rotateX(180deg) rotateZ(180deg) translateZ(-1px);
-        transform: rotateX(180deg) rotateZ(180deg) translateZ(-1px);
-        -webkit-animation: zeroFour 4000ms linear infinite;
-        animation: zeroFour 4000ms linear infinite;
-      }
- 
-      @-webkit-keyframes zeroFour {
-        0% {
-          content: "4";
-        }
-        100% {
-          content: "0";
-        }
-      }
- 
-      @keyframes zeroFour {
-        0% {
-          content: "4";
-        }
-        100% {
-          content: "0";
-        }
-      }
- 
-      @-webkit-keyframes roll {
-        0% {
-          -webkit-transform: rotateZ(0deg);
-          transform: rotateZ(0deg);
-        }
-        85% {
-          -webkit-transform: rotateZ(90deg);
-          transform: rotateZ(90deg);
-        }
-        87% {
-          -webkit-transform: rotateZ(88deg);
-          transform: rotateZ(88deg);
-        }
-        90% {
-          -webkit-transform: rotateZ(90deg);
-          transform: rotateZ(90deg);
-        }
-        100% {
-          -webkit-transform: rotateZ(90deg);
-          transform: rotateZ(90deg);
-        }
-      }
- 
-      @keyframes roll {
-        0% {
-          -webkit-transform: rotateZ(0deg);
-          transform: rotateZ(0deg);
-        }
-        85% {
-          -webkit-transform: rotateZ(90deg);
-          transform: rotateZ(90deg);
-        }
-        87% {
-          -webkit-transform: rotateZ(88deg);
-          transform: rotateZ(88deg);
-        }
-        90% {
-          -webkit-transform: rotateZ(90deg);
-          transform: rotateZ(90deg);
-        }
-        100% {
-          -webkit-transform: rotateZ(90deg);
-          transform: rotateZ(90deg);
-        }
-      }
- 
-      @-webkit-keyframes slide {
-        0% {
-          -webkit-transform: translateX(0);
-          transform: translateX(0);
-        }
-        100% {
-          -webkit-transform: translateX(-200px);
-          transform: translateX(-200px);
-        }
-      }
- 
-      @keyframes slide {
-        0% {
-          -webkit-transform: translateX(0);
-          transform: translateX(0);
-        }
-        100% {
-          -webkit-transform: translateX(-200px);
-          transform: translateX(-200px);
-        }
-      }
- </style>
-   
+ </style> 
 </head>
 <body>
-  <div class="NotPage">
-    <div class="message">不 小 心 进 了 黑 屋 子 ...</div>    
-    <div class="rail">
-      <div class="stamp four">4</div>
-      <div class="stamp zero">0</div>
-      <div class="stamp four">4</div>
-      <div class="stamp zero">0</div>
-      <div class="stamp four">4</div>
-      <div class="stamp zero">0</div>
-      <div class="stamp four">4</div>
-      <div class="stamp zero">0</div>
-      <div class="stamp four">4</div>
-      <div class="stamp zero">0</div>
-      <div class="stamp four">4</div>
-      <div class="stamp zero">0</div>
-      <div class="stamp four">4</div>
-      <div class="stamp zero">0</div>
-      <div class="stamp four">4</div>
-      <div class="stamp zero">0</div>
-      <div class="stamp four">4</div>
-      <div class="stamp zero">0</div>
-      <div class="stamp four">4</div>
-      <div class="stamp zero">0</div>
-    </div>
-    <div class="world">
-      <div class="forward">
-        <div class="box">
-          <div class="wall"></div>
-          <div class="wall"></div>
-          <div class="wall"></div>
-          <div class="wall"></div>
-          <div class="wall"></div>
-          <div class="wall"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-<div class="message"><a href="/">不 小 心 进 了 黑 屋 子 ...</a></div>
+
+<canvas id="c"></canvas>
+<div class="content">
+    <h1>4<span class="black-hole">0</span>4</h1>
+    <h2>Page not found.</h2>
+    <div class="black-hole"><a href="/"><h2>返回主页...</h2></a></div>
+</div>
+
+<svg height="0">
+    <filter id="drop-shadow">
+        <feMorphology operator="dilate" radius="10" in="SourceAlpha" result="dilated" />
+
+        <feGaussianBlur stdDeviation="10" in="dilated" result="blurred" />
+
+        <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic" />
+        </feMerge>
+    </filter>
+</svg>
+
+<script type="text/javascript">
+var c = document.getElementById("c");
+var ctx = c.getContext("2d");
+var size = Math.max(window.innerWidth, window.innerHeight);
+c.width = size;
+c.height = size;
+
+var startCircles = 100;
+var limit = 100;
+var circles = [];
+var center = {};
+
+var Circle = function(x, y) {
+    this.x = x;
+    this.y = y;
+    this.angle = 0;
+    this.radius = rand(2, 10);
+    this.shade = rand(10, 100) / 100;
+}
+
+Circle.prototype.end = function() {
+    circles.splice(circles.indexOf(this), 1);
+};
+
+init();
+
+function init() {
+    limit = Math.max(startCircles, limit);
+    circles = [];
+    ctx.fillStyle = "#0A0A0A";
+    ctx.fillRect(0, 0, c.width, c.height);
+    for (var i = 0; i < startCircles; i++) {
+        setTimeout(function() {
+            var x = rand(0, c.width);
+            var y = rand(0, c.height);
+            circles.push(new Circle(x, y));
+        }, startCircles * i);
+    }
+
+    var hole = document.getElementsByClassName("black-hole")[0].getBoundingClientRect();
+    center.x = hole.left + hole.width / 2;
+    center.y = hole.top + hole.height / 2;
+    animate();
+}
+
+function animate() {
+    ctx.fillStyle = "rgba(10,10,10,0.5)";
+    ctx.fillRect(0, 0, c.width, c.height);
+
+    var i = circles.length;
+    var gvx, gvy;
+    while (i--) {
+        var circle = circles[i];
+        circle.radius -= 0.05;
+        circle.radius = Math.abs(circle.radius);
+
+        vx = (center.x - circle.x) / Math.abs(circle.y) * 2;
+        vy = (center.y - circle.y) / Math.abs(circle.x) * 2;
+
+        circle.x += vx;
+        circle.y += vy;
+
+        if (circle.radius <= 0.1) {
+            circle.end();
+            var x = rand(0, c.width);
+            var y = rand(0, c.height);
+            circles.push(new Circle(x, y));
+        }
+
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "rgba(0,0,255," + circle.shade + ")";
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    if (circles.length > limit) {
+        circles.shift();
+    }
+
+    requestAnimationFrame(animate);
+}
+
+function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+window.addEventListener("click", function(e) {
+    circles.push(new Circle(e.clientX, e.clientY));
+})
+</script>
 </body>
 </html>
